@@ -62,7 +62,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="TimeScaleSlider" type="HSlider" parent="MarginContainer/ControlPanel/MarginContainer/Controls"]
+unique_name_in_owner = true
 layout_mode = 2
+min_value = 1.0
+max_value = 10.0
+value = 2.0
+rounded = true
 
 [node name="LogDock" parent="." instance=ExtResource("2_x4jx1")]
 unique_name_in_owner = true
@@ -87,3 +92,4 @@ size_flags_stretch_ratio = 7.43
 
 [connection signal="toggled" from="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons/PlayButton" to="." method="_on_play_button_toggled"]
 [connection signal="pressed" from="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="value_changed" from="MarginContainer/ControlPanel/MarginContainer/Controls/TimeScaleSlider" to="." method="_on_time_scale_slider_value_changed"]
