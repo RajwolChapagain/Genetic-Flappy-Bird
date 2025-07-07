@@ -69,7 +69,7 @@ func _on_pipe_spawn_timer_timeout() -> void:
 func on_agent_crossed_pipe() -> void:
 	if not point_awarded:
 		score += 1
-		$HUD.set_score(score)
+		%HUD.set_score(score)
 		point_awarded = true
 
 func get_closest_pipe_position() -> Vector2:
@@ -167,9 +167,9 @@ func reset_world() -> void:
 	dead_count = 0
 	if score > high_score:
 		high_score = score
-		$HUD.set_high_score(high_score)
+		%HUD.set_high_score(high_score)
 	score = 0
-	$HUD.set_score(score)
+	%HUD.set_score(score)
 	pipe_queue.clear()
 	for child in get_children():
 		if child.is_in_group('pipes'):
@@ -179,7 +179,7 @@ func reset_world() -> void:
 		elif child.is_in_group('agent'):
 			child.queue_free()
 	generation += 1
-	$HUD.set_generation(generation)
+	%HUD.set_generation(generation)
 	
 func initialize_generation() -> void:
 	print('Generation:', generation)
