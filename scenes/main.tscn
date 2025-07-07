@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqq5jo5s0dl7m"]
+[gd_scene load_steps=9 format=3 uid="uid://dqq5jo5s0dl7m"]
 
 [ext_resource type="PackedScene" uid="uid://gt0dwxn7ibrl" path="res://scenes/world.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://bwead37s0yceu" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://bte3glnek8ttp" path="res://scenes/agent.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cvvw1tedvvdy4" path="res://scenes/pipe_pair.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://c0hgla60wb1ta" path="res://scenes/hud.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://3de41qa61pva" path="res://scenes/ui.tscn" id="6_tefeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
 size = Vector2(60, 778)
@@ -45,6 +46,8 @@ shape = SubResource("RectangleShape2D_tbgi4")
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("5_tbgi4")]
 unique_name_in_owner = true
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("6_tefeu")]
 
 [connection signal="area_entered" from="PipeEnd" to="." method="_on_pipe_end_area_entered"]
 [connection signal="timeout" from="PipeSpawnTimer" to="." method="_on_pipe_spawn_timer_timeout"]

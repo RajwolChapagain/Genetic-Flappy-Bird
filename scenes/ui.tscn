@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dc2nob4gwua7v" path="res://scenes/v_expandable_dock.tscn" id="2_x4jx1"]
 
 [node name="UI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -53,6 +54,8 @@ size_flags_vertical = 3
 [node name="PlayButton" type="Button" parent="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 3
+toggle_mode = true
+button_pressed = true
 
 [node name="ResetButton" type="Button" parent="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons"]
 layout_mode = 2
@@ -81,3 +84,5 @@ layout_mode = 1
 offset_left = -354.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 7.43
+
+[connection signal="toggled" from="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons/PlayButton" to="." method="_on_play_button_toggled"]
