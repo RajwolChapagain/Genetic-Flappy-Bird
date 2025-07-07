@@ -13,3 +13,7 @@ func _on_play_button_toggled(toggled_on: bool) -> void:
 	else:
 		get_tree().paused = true
 	
+
+func _on_reset_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()

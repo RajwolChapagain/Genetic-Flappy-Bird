@@ -86,3 +86,4 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 7.43
 
 [connection signal="toggled" from="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons/PlayButton" to="." method="_on_play_button_toggled"]
+[connection signal="pressed" from="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons/ResetButton" to="." method="_on_reset_button_pressed"]
