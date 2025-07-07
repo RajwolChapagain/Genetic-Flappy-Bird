@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxphcpomcf15t" path="res://scripts/v_expandable_dock.gd" id="1_muemm"]
 
-[node name="VExpandableDock" type="Control"]
+[node name="VExpandableDock" type="Control" groups=["dock"]]
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 3
 anchors_preset = 12

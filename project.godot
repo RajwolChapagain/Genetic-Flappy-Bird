@@ -26,6 +26,7 @@ window/stretch/mode="canvas_items"
 pipes=""
 agent=""
 obstacle=""
+dock=""
 
 [input]
 

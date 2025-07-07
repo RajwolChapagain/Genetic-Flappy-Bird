@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://3de41qa61pva"]
+[gd_scene load_steps=4 format=3 uid="uid://3de41qa61pva"]
 
 [ext_resource type="PackedScene" uid="uid://w5sw4x4mu7eq" path="res://scenes/h_expandable_dock.tscn" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://cbt15fitw1rhk" path="res://scripts/ui.gd" id="1_yev5y"]
 [ext_resource type="PackedScene" uid="uid://dc2nob4gwua7v" path="res://scenes/v_expandable_dock.tscn" id="2_x4jx1"]
 
 [node name="UI" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yev5y")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -59,10 +61,23 @@ size_flags_horizontal = 3
 [node name="TimeScaleSlider" type="HSlider" parent="MarginContainer/ControlPanel/MarginContainer/Controls"]
 layout_mode = 2
 
-[node name="ControlDock" parent="." instance=ExtResource("1_nt7q6")]
-layout_mode = 1
+[node name="LogDock" parent="." instance=ExtResource("2_x4jx1")]
+unique_name_in_owner = true
+layout_mode = 2
+anchors_preset = 0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 518.0
+offset_right = 748.0
+offset_bottom = 768.0
+size_flags_horizontal = 3
+size_flags_vertical = 8
+size_flags_stretch_ratio = 14.8
 
-[node name="VExpandableDock" parent="." instance=ExtResource("2_x4jx1")]
+[node name="ControlDock" parent="." groups=["dock"] instance=ExtResource("1_nt7q6")]
+unique_name_in_owner = true
 layout_mode = 1
-offset_top = -250.0
-offset_right = -122.0
+offset_left = -354.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.43

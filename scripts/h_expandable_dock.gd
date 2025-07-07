@@ -20,8 +20,14 @@ func initialize_layout() -> void:
 		
 func _on_button_pressed() -> void:
 	if not expanded:
-		%Items.position = EXPANDED_POSITION
-		expanded = true
+		expand_dock()
 	else:
-		%Items.position -= SLIDE_VECTOR
-		expanded = false
+		contract_dock()
+
+func expand_dock() -> void:
+	%Items.position = EXPANDED_POSITION
+	expanded = true
+
+func contract_dock() -> void:
+	%Items.position -= SLIDE_VECTOR
+	expanded = false

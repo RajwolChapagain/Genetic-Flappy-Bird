@@ -15,7 +15,7 @@ size_flags_horizontal = 8
 script = ExtResource("1_8lkuh")
 expanded = true
 
-[node name="Items" type="HBoxContainer" parent="."]
+[node name="Items" type="HBoxContainer" parent="." groups=["dock"]]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
