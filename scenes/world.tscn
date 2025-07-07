@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://gt0dwxn7ibrl"]
+
+[ext_resource type="Texture2D" uid="uid://dxt2uu0bhsy1p" path="res://assets/background.png" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://dti3fbqm2jwc5" path="res://scenes/ground.tscn" id="2_rwgxs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnsk1"]
+size = Vector2(1025, 62)
+
+[node name="World" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1024.0
+offset_bottom = 768.0
+texture = ExtResource("1_nnsk1")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(10, -53)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(502.5, 21)
+shape = SubResource("RectangleShape2D_nnsk1")
+
+[node name="Ground" parent="." instance=ExtResource("2_rwgxs")]
+position = Vector2(10, 716)

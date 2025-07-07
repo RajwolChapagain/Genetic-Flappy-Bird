@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqq5jo5s0dl7m"]
+
+[ext_resource type="PackedScene" uid="uid://gt0dwxn7ibrl" path="res://scenes/world.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://bwead37s0yceu" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bte3glnek8ttp" path="res://scenes/agent.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cvvw1tedvvdy4" path="res://scenes/pipe_pair.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c0hgla60wb1ta" path="res://scenes/hud.tscn" id="5_tbgi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
+size = Vector2(60, 778)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
+size = Vector2(796, 36)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_sugp2")
+PIPE_SCENE = ExtResource("3_sugp2")
+AGENT_SCENE = ExtResource("2_sugp2")
+
+[node name="World" parent="." instance=ExtResource("1_0wfyh")]
+
+[node name="PipeOrigin" type="Marker2D" parent="."]
+position = Vector2(1130, 384)
+
+[node name="AgentOrigin" type="Marker2D" parent="."]
+position = Vector2(216, 292)
+
+[node name="PipeEnd" type="Area2D" parent="."]
+position = Vector2(-137, 21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeEnd"]
+position = Vector2(20, 379)
+shape = SubResource("RectangleShape2D_jyhfs")
+
+[node name="PipeSpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("5_tbgi4")]
+
+[node name="Purgatory" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Purgatory"]
+position = Vector2(-388, 861)
+shape = SubResource("RectangleShape2D_tbgi4")
+
+[connection signal="area_entered" from="PipeEnd" to="." method="_on_pipe_end_area_entered"]
+[connection signal="timeout" from="PipeSpawnTimer" to="." method="_on_pipe_spawn_timer_timeout"]

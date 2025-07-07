@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvvw1tedvvdy4"]
+
+[ext_resource type="Script" uid="uid://fjefnwg0t71y" path="res://scripts/pipe_pair.gd" id="1_m2bs7"]
+[ext_resource type="PackedScene" uid="uid://dwf7ppxpoc2ao" path="res://scenes/pipe.tscn" id="1_t8jum"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2bs7"]
+size = Vector2(68, 1046)
+
+[node name="PipePair" type="Area2D" groups=["pipes"]]
+collision_mask = 5
+script = ExtResource("1_m2bs7")
+move_speed = 160
+
+[node name="LowerPipe" parent="." instance=ExtResource("1_t8jum")]
+position = Vector2(0, 312)
+
+[node name="UpperPipe" parent="." instance=ExtResource("1_t8jum")]
+position = Vector2(0, -312)
+
+[node name="Sprite2D" parent="UpperPipe" index="0"]
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m2bs7")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+
+[editable path="UpperPipe"]
