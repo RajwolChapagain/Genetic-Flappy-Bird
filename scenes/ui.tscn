@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://3de41qa61pva"]
+[gd_scene load_steps=3 format=3 uid="uid://3de41qa61pva"]
 
 [ext_resource type="PackedScene" uid="uid://w5sw4x4mu7eq" path="res://scenes/h_expandable_dock.tscn" id="1_nt7q6"]
+[ext_resource type="PackedScene" uid="uid://dc2nob4gwua7v" path="res://scenes/v_expandable_dock.tscn" id="2_x4jx1"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -60,3 +61,8 @@ layout_mode = 2
 
 [node name="ControlDock" parent="." instance=ExtResource("1_nt7q6")]
 layout_mode = 1
+
+[node name="VExpandableDock" parent="." instance=ExtResource("2_x4jx1")]
+layout_mode = 1
+offset_top = -250.0
+offset_right = -122.0
