@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5t1jccaui6ec"]
+
+[ext_resource type="Script" uid="uid://bgp2ua7bt38kd" path="res://scripts/warning_icon.gd" id="1_y37v5"]
+[ext_resource type="Texture2D" uid="uid://da5airipbfca1" path="res://assets/ui/requires_next_gen.png" id="2_246gu"]
+[ext_resource type="Texture2D" uid="uid://c7us2ae8no71g" path="res://assets/ui/requires_restart.png" id="3_gc4sb"]
+
+[node name="WarningIcon" type="Control"]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+script = ExtResource("1_y37v5")
+type = 1
+requires_next_gen_sprite = ExtResource("2_246gu")
+requires_restart_sprite = ExtResource("3_gc4sb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
