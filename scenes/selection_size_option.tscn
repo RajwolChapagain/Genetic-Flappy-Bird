@@ -1,19 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://brbw37e8nur3w"]
+[gd_scene load_steps=2 format=3 uid="uid://uldqtmf6j3nr"]
 
-[ext_resource type="PackedScene" uid="uid://ctca36n7l22bk" path="res://scenes/option.tscn" id="1_grnpx"]
+[ext_resource type="PackedScene" uid="uid://du2k0rcpjfwlv" path="res://scenes/field_input_option.tscn" id="1_grnpx"]
 
 [node name="SelectionSizeOption" instance=ExtResource("1_grnpx")]
-tooltip_text = "Number of birds that get to live at the end of each generation"
 
 [node name="Label" parent="HBoxContainer" index="0"]
-text = "Selection Size: "
-
-[node name="HSlider" parent="HBoxContainer" index="1"]
-min_value = 2.0
-max_value = 50.0
-value = 2.0
-rounded = true
+text = "Selection Size:"
 
 [node name="WarningIcon" parent="HBoxContainer" index="2"]
-size_flags_horizontal = 2
-size_flags_vertical = 4
+type = 0
