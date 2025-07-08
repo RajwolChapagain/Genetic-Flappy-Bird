@@ -95,7 +95,7 @@ func get_closest_pipe_position() -> Vector2:
 func on_agent_died() -> void:
 	dead_count += 1
 	if dead_count == len(population):
-		select_fittest(INIT_POPULATION_SIZE)
+		select_fittest()
 		reset_world()
 		initialize_generation()
 
@@ -144,7 +144,7 @@ func get_random_parent_pairs(n_pairs: int) -> Array:
 		
 	return pairs
 
-func select_fittest(n: int) -> void:
+func select_fittest() -> void:
 	var fitnesses = []
 	for i in range(len(population)):
 		var weights = population[i]
@@ -156,7 +156,7 @@ func select_fittest(n: int) -> void:
 	
 	population.clear()
 	agents.clear()
-	for i in range(n):
+	for i in range(Configuration.SELECTION_SIZE):
 		population.append(fitnesses[i][1])
 	
 	var log = 'Generation ended. Best fit:\n'
