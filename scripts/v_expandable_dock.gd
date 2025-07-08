@@ -31,3 +31,6 @@ func expand_dock() -> void:
 func contract_dock() -> void:
 	%Items.position -= SLIDE_VECTOR
 	expanded = false
+
+func dump_to_logs(message: String) -> void:
+	%LogLabel.text = message + '\n' + %LogLabel.text
