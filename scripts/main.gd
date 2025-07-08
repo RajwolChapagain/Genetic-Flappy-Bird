@@ -157,7 +157,7 @@ func select_fittest() -> void:
 	
 	population.clear()
 	agents.clear()
-	for i in range(Configuration.SELECTION_SIZE):
+	for i in range(mini(Configuration.SELECTION_SIZE, len(fitnesses))):
 		population.append(fitnesses[i][1])
 	
 	var log = 'Generation ended. Best fit:\n'
