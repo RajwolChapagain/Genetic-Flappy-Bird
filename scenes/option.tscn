@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ctca36n7l22bk"]
+
+[node name="Option" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 151.0
+offset_bottom = 46.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Value: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+stretch_mode = 5
