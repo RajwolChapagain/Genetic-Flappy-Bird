@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://3de41qa61pva"]
+[gd_scene load_steps=5 format=3 uid="uid://3de41qa61pva"]
 
 [ext_resource type="PackedScene" uid="uid://w5sw4x4mu7eq" path="res://scenes/h_expandable_dock.tscn" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cbt15fitw1rhk" path="res://scripts/ui.gd" id="1_yev5y"]
+[ext_resource type="Texture2D" uid="uid://drdep43aucxj" path="res://assets/ui/play_button.svg" id="2_gdt2y"]
 [ext_resource type="PackedScene" uid="uid://dc2nob4gwua7v" path="res://scenes/v_expandable_dock.tscn" id="2_x4jx1"]
 
 [node name="UI" type="Control"]
@@ -56,6 +57,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 button_pressed = true
+icon = ExtResource("2_gdt2y")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="ResetButton" type="Button" parent="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons"]
 layout_mode = 2
