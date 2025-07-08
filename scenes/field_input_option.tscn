@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://wox5r6bq0ndd" path="res://scripts/field_input_option.gd" id="1_cy26e"]
 [ext_resource type="PackedScene" uid="uid://b5t1jccaui6ec" path="res://scenes/warning_icon.tscn" id="2_xjvqw"]
 
-[node name="FieldInputOption" type="Control"]
+[node name="FieldInputOption" type="Control" groups=["option"]]
 custom_minimum_size = Vector2(200, 46)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_cy26e")
+configuration_name = "SELECTION_SIZE"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -24,6 +25,7 @@ layout_mode = 2
 text = "Value:"
 
 [node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "0-99"
 alignment = 1

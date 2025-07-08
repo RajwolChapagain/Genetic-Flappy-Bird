@@ -31,6 +31,7 @@ pipes=""
 agent=""
 obstacle=""
 dock=""
+option=""
 
 [input]
 

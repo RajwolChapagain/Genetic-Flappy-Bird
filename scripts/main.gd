@@ -18,6 +18,7 @@ func _ready() -> void:
 	initialize_pipes()
 	initialize_random_weights()
 	initialize_generation()
+	get_tree().call_group("option", "sync_to_configuration")
 	
 func initialize_random_weights():
 	for i in range(INIT_POPULATION_SIZE):
