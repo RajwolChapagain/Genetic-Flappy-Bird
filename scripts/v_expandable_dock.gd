@@ -34,3 +34,6 @@ func contract_dock() -> void:
 
 func dump_to_logs(message: String) -> void:
 	%LogLabel.text = %LogLabel.text + '\n' + message
+
+func _on_scroll_to_bottom_button_pressed() -> void:
+	%ScrollContainer.scroll_vertical = %ScrollContainer.get_v_scroll_bar().max_value

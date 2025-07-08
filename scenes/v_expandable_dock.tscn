@@ -32,15 +32,23 @@ text = "Logs"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Items/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Items/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="LogLabel" type="Label" parent="Items/Panel/ScrollContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Items/Panel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LogLabel" type="Label" parent="Items/Panel/MarginContainer/ScrollContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
@@ -48,4 +56,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 autowrap_mode = 3
 
+[node name="ButtonPadding" type="MarginContainer" parent="Items/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollToBottomButton" type="Button" parent="Items/Panel/MarginContainer/ButtonPadding"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
 [connection signal="pressed" from="Items/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Items/Panel/MarginContainer/ButtonPadding/ScrollToBottomButton" to="." method="_on_scroll_to_bottom_button_pressed"]
