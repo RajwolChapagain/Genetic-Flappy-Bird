@@ -33,4 +33,4 @@ func contract_dock() -> void:
 	expanded = false
 
 func dump_to_logs(message: String) -> void:
-	%LogLabel.text = message + '\n' + %LogLabel.text
+	%LogLabel.text = %LogLabel.text + '\n' + message

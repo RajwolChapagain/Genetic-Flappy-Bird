@@ -20,3 +20,6 @@ func _on_reset_button_pressed() -> void:
 func _on_time_scale_slider_value_changed(value: float) -> void:
 	Engine.time_scale = value
 	Engine.physics_ticks_per_second = 60 * value
+	
+func dump_to_logs(message: String) -> void:
+	%LogDock.dump_to_logs(message)

@@ -48,6 +48,7 @@ shape = SubResource("RectangleShape2D_tbgi4")
 unique_name_in_owner = true
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("6_tefeu")]
+unique_name_in_owner = true
 
 [connection signal="area_entered" from="PipeEnd" to="." method="_on_pipe_end_area_entered"]
 [connection signal="timeout" from="PipeSpawnTimer" to="." method="_on_pipe_spawn_timer_timeout"]

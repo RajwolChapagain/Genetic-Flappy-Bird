@@ -110,10 +110,14 @@ func breed() -> void:
 		offsprings.append([mutate(offspring, 0.8), generation])
 		
 	population.append_array(offsprings)
+	var log = 'Current pool:\n'
 	print('Current pool:')
 	for weight in population:
 		print(weight[0])
+		log += str(weight[0]) + '\n'
 	print()
+	log += '\n'
+	%UI.dump_to_logs(log)
 
 func crossover(parent_a, parent_b) -> Array:
 	var offspring = []
@@ -155,13 +159,19 @@ func select_fittest(n: int) -> void:
 	for i in range(n):
 		population.append(fitnesses[i][1])
 	
+	var log = 'Generation ended. Best fit:\n'
 	print('Generation ended. Best fit:')
 	print('\t', fitnesses[0][1][0], ' Born in generation: ', fitnesses[0][1][1])
+	log += '\t' + str(fitnesses[0][1][0]) + ' Born in generation: ' + str(fitnesses[0][1][1]) + '\n\n'
 	print()
 	print('New population pool:')
+	log += 'New population pool:\n'
 	for individual in population:
 		print(individual[0])
+		log += str(individual[0]) + '\n'
 	print('----------------------')
+	log += '----------------------\n'
+	%UI.dump_to_logs(log)
 
 func reset_world() -> void:
 	dead_count = 0
@@ -182,7 +192,8 @@ func reset_world() -> void:
 	%HUD.set_generation(generation)
 	
 func initialize_generation() -> void:
-	print('Generation:', generation)
+	print('Generation: ' + str(generation))
+	%UI.dump_to_logs('Generation: ' + str(generation))
 	generation_start_time = Time.get_ticks_msec()
 	breed()
 	initialize_agents()
