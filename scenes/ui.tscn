@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://3de41qa61pva"]
+[gd_scene load_steps=6 format=3 uid="uid://3de41qa61pva"]
 
 [ext_resource type="PackedScene" uid="uid://w5sw4x4mu7eq" path="res://scenes/h_expandable_dock.tscn" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cbt15fitw1rhk" path="res://scripts/ui.gd" id="1_yev5y"]
 [ext_resource type="Texture2D" uid="uid://drdep43aucxj" path="res://assets/ui/play_button.svg" id="2_gdt2y"]
 [ext_resource type="PackedScene" uid="uid://dc2nob4gwua7v" path="res://scenes/v_expandable_dock.tscn" id="2_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://bmkq08hf8f2mw" path="res://assets/ui/pause_button.svg" id="3_wm3ai"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -14,6 +15,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yev5y")
+play_button_icon = ExtResource("2_gdt2y")
+pause_button_icon = ExtResource("3_wm3ai")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -53,11 +56,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="PlayButton" type="Button" parent="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 button_pressed = true
-icon = ExtResource("2_gdt2y")
+icon = ExtResource("3_wm3ai")
 flat = true
 icon_alignment = 1
 expand_icon = true

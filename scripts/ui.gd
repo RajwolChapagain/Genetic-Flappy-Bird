@@ -1,5 +1,8 @@
 extends Control
 
+@export var play_button_icon: Texture2D
+@export var pause_button_icon: Texture2D
+
 func _ready() -> void:
 	call_deferred("contract_all_docks")
 	%TimeScaleSlider.value = Engine.time_scale
@@ -9,8 +12,10 @@ func contract_all_docks() -> void:
 	
 func _on_play_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
+		%PlayButton.icon = pause_button_icon
 		get_tree().paused = false
 	else:
+		%PlayButton.icon = play_button_icon
 		get_tree().paused = true
 	
 func _on_reset_button_pressed() -> void:
