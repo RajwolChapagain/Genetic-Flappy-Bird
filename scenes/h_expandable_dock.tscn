@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://w5sw4x4mu7eq"]
+[gd_scene load_steps=4 format=3 uid="uid://w5sw4x4mu7eq"]
 
 [ext_resource type="Script" uid="uid://phuk4q6qdnb0" path="res://scripts/h_expandable_dock.gd" id="1_8lkuh"]
+[ext_resource type="PackedScene" uid="uid://brbw37e8nur3w" path="res://scenes/selection_size_option.tscn" id="2_4txsr"]
+[ext_resource type="PackedScene" uid="uid://ctca36n7l22bk" path="res://scenes/option.tscn" id="3_x8vp4"]
 
 [node name="HExpandableDock" type="Control"]
 custom_minimum_size = Vector2(200, 0)
@@ -9,6 +11,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -357.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
@@ -32,5 +35,32 @@ text = "Controls"
 [node name="Panel" type="Panel" parent="Items"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Items/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Items/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Items/Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="SelectionSizeOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_4txsr")]
+layout_mode = 2
+
+[node name="Option" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_x8vp4")]
+layout_mode = 2
 
 [connection signal="pressed" from="Items/Button" to="." method="_on_button_pressed"]
