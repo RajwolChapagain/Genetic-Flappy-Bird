@@ -69,26 +69,18 @@ max_value = 10.0
 value = 2.0
 rounded = true
 
-[node name="LogDock" parent="." instance=ExtResource("2_x4jx1")]
-unique_name_in_owner = true
-layout_mode = 2
-anchors_preset = 0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = 518.0
-offset_right = 748.0
-offset_bottom = 768.0
-size_flags_horizontal = 3
-size_flags_vertical = 8
-size_flags_stretch_ratio = 14.8
-
 [node name="ControlDock" parent="." groups=["dock"] instance=ExtResource("1_nt7q6")]
 unique_name_in_owner = true
 layout_mode = 1
 offset_left = -354.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 7.43
+
+[node name="LogDock" parent="." instance=ExtResource("2_x4jx1")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_top = -250.0
+offset_right = -277.0
 
 [connection signal="toggled" from="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons/PlayButton" to="." method="_on_play_button_toggled"]
 [connection signal="pressed" from="MarginContainer/ControlPanel/MarginContainer/Controls/Buttons/ResetButton" to="." method="_on_reset_button_pressed"]
