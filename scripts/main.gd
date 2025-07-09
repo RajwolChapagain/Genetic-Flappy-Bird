@@ -44,8 +44,8 @@ func initialize_agents() -> void:
 		call_deferred("add_child", agent)
 		
 		if i == 0:
-			agent.get_node('Sprite2D').modulate = Color.YELLOW
-			agent.get_node('Sprite2D').z_index = 3
+			agent.crown()
+			agent.increase_z_index()
 
 func on_agents_entered_pipe(agent):
 	point_awarded = false

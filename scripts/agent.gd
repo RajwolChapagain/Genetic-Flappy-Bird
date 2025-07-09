@@ -45,3 +45,10 @@ func _on_body_entered(body: Node) -> void:
 		alive = false
 		last_time_alive = Time.get_ticks_msec()
 		agent_died.emit()
+
+func crown() -> void:
+	%Crown.visible = true
+
+func increase_z_index() -> void:
+	$Sprite2D.z_index = 3
+	%Crown.z_index = 3
