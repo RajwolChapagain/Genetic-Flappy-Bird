@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://thh5htgi7naf"]
+
+[ext_resource type="PackedScene" uid="uid://du2k0rcpjfwlv" path="res://scenes/field_input_option.tscn" id="1_twria"]
+
+[node name="NumberOfPairingsOption" instance=ExtResource("1_twria")]
+tooltip_text = "Number of bird couples selected for crossover at the end of each generation"
+configuration_name = "NUM_PAIRINGS"
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Number of Pairings :"
+
+[node name="WarningIcon" parent="HBoxContainer" index="2"]
+type = 0

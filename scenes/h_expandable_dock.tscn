@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://w5sw4x4mu7eq"]
+[gd_scene load_steps=4 format=3 uid="uid://w5sw4x4mu7eq"]
 
 [ext_resource type="Script" uid="uid://phuk4q6qdnb0" path="res://scripts/h_expandable_dock.gd" id="1_8lkuh"]
 [ext_resource type="PackedScene" uid="uid://uldqtmf6j3nr" path="res://scenes/selection_size_option.tscn" id="2_4txsr"]
+[ext_resource type="PackedScene" uid="uid://thh5htgi7naf" path="res://scenes/number_of_pairings_option.tscn" id="3_x8vp4"]
 
 [node name="HExpandableDock" type="Control"]
 custom_minimum_size = Vector2(200, 0)
@@ -57,6 +58,9 @@ size_flags_vertical = 3
 theme_override_constants/separation = 20
 
 [node name="SelectionSizeOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_4txsr")]
+layout_mode = 2
+
+[node name="NumberOfPairingsOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_x8vp4")]
 layout_mode = 2
 
 [connection signal="pressed" from="Items/Button" to="." method="_on_button_pressed"]

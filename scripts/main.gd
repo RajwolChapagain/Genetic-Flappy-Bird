@@ -102,7 +102,7 @@ func on_agent_died() -> void:
 		initialize_generation()
 
 func breed() -> void:
-	var parent_pairs = get_random_parent_pairs(INIT_POPULATION_SIZE)
+	var parent_pairs = get_random_parent_pairs()
 	var offsprings = []
 	for couple in parent_pairs:
 		var parent_a = population[couple[0]][0]
@@ -139,9 +139,9 @@ func mutate(individual, deviation: float) -> Array:
 			
 	return individual
 	
-func get_random_parent_pairs(n_pairs: int) -> Array:
+func get_random_parent_pairs() -> Array:
 	var pairs = []
-	for i in range(n_pairs):
+	for i in range(Configuration.NUM_PAIRINGS):
 		pairs.append(Vector2i(randi_range(0, len(population) - 1), randi_range(0, len(population) - 1)))
 		
 	return pairs
