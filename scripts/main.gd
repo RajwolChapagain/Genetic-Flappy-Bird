@@ -109,7 +109,7 @@ func breed() -> void:
 		var parent_b = population[couple[1]][0]
 		
 		var offspring = crossover(parent_a, parent_b)
-		offsprings.append([mutate(offspring, 0.8), generation])
+		offsprings.append([mutate(offspring), generation])
 		
 	population.append_array(offsprings)
 	var log = 'Current pool:\n'
@@ -128,7 +128,8 @@ func crossover(parent_a, parent_b) -> Array:
 			
 	return offspring
 
-func mutate(individual, deviation: float) -> Array:
+func mutate(individual) -> Array:
+	var deviation = Configuration.MUTATION_DEVIATION
 	var mut_prob = float(1.0/6)
 	deviation /= generation
 	

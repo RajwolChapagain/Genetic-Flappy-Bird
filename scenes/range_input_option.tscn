@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://durg8mmiu83r0"]
+
+[ext_resource type="Script" uid="uid://bsdt6xsmwctbm" path="res://scripts/range_input_option.gd" id="1_su4rp"]
+[ext_resource type="PackedScene" uid="uid://b5t1jccaui6ec" path="res://scenes/warning_icon.tscn" id="2_haxg2"]
+
+[node name="RangeInputOption" type="Control" groups=["option"]]
+custom_minimum_size = Vector2(200, 46)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 200.0
+offset_bottom = 46.0
+script = ExtResource("1_su4rp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Value:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="WarningIcon" parent="HBoxContainer" instance=ExtResource("2_haxg2")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="value_changed" from="HBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
