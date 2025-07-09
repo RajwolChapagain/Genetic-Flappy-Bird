@@ -18,7 +18,7 @@ func _ready() -> void:
 	initialize_pipes()
 	initialize_random_weights()
 	initialize_generation()
-	get_tree().call_group("option", "sync_to_configuration")
+	get_tree().call_group("option", "read_from_configuration")
 	
 func initialize_random_weights():
 	for i in range(INIT_POPULATION_SIZE):
@@ -98,6 +98,7 @@ func on_agent_died() -> void:
 	if dead_count == len(population):
 		select_fittest()
 		reset_world()
+		load_configuration()
 		initialize_generation()
 
 func breed() -> void:
@@ -191,6 +192,7 @@ func reset_world() -> void:
 			child.queue_free()
 	generation += 1
 	%HUD.set_generation(generation)
+	get_tree().call_group("option", "write_to_configuration")
 	
 func initialize_generation() -> void:
 	print('Generation: ' + str(generation))
@@ -198,3 +200,7 @@ func initialize_generation() -> void:
 	generation_start_time = Time.get_ticks_msec()
 	breed()
 	initialize_agents()
+
+func load_configuration() -> void:
+	get_tree().call_group("option", "read_from_configuration")
+	
