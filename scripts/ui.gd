@@ -20,6 +20,7 @@ func _on_play_button_toggled(toggled_on: bool) -> void:
 	
 func _on_reset_button_pressed() -> void:
 	get_tree().paused = false
+	get_tree().call_group("option", "write_to_configuration")
 	get_tree().reload_current_scene()
 
 func _on_time_scale_slider_value_changed(value: int) -> void:
