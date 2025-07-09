@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxpaoam5ohu1y"]
+
+[ext_resource type="PackedScene" uid="uid://durg8mmiu83r0" path="res://scenes/range_input_option.tscn" id="1_f0geg"]
+
+[node name="MutationProbabilityOption" instance=ExtResource("1_f0geg")]
+tooltip_text = "Probaility of each gene mutating upon birth"
+configuration_name = "MUTATION_PROBABILITY"
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Mutation Probability:"
+
+[node name="HSlider" parent="HBoxContainer" index="1"]
+max_value = 1.0
+step = 0.05
+
+[node name="WarningIcon" parent="HBoxContainer" index="2"]
+type = 0

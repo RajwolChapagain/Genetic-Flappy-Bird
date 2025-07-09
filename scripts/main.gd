@@ -130,7 +130,7 @@ func crossover(parent_a, parent_b) -> Array:
 
 func mutate(individual) -> Array:
 	var deviation = Configuration.MUTATION_DEVIATION
-	var mut_prob = float(1.0/6)
+	var mut_prob = Configuration.MUTATION_PROBABILITY
 	deviation /= generation
 	
 	for i in range(len(individual)):
