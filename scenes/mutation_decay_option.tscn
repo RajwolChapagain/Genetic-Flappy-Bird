@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://csujib5v5rduj"]
+
+[ext_resource type="PackedScene" uid="uid://buxc26bbk71bn" path="res://scenes/check_button_option.tscn" id="1_wk2p1"]
+
+[node name="MutationDecayOption" instance=ExtResource("1_wk2p1")]
+tooltip_text = "Whether mutation deviation decays each"
+configuration_name = "MUTATION_DECAY"
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Mutation Decay:"
+
+[node name="WarningIcon" parent="HBoxContainer" index="2"]
+type = 0
