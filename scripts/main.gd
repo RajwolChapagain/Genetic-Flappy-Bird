@@ -5,6 +5,7 @@ extends Node
 @export var INIT_POPULATION_SIZE: int = 10
 var pipe_queue = []
 var population = []
+var fitnesses = []
 var agents = []
 var score = 0
 var high_score = 0
@@ -17,12 +18,17 @@ var point_awarded = false
 func _ready() -> void:
 	initialize_pipes()
 	initialize_random_weights()
+	initialize_fitnesses()
 	initialize_generation()
 	get_tree().call_group("option", "read_from_configuration")
 	
-func initialize_random_weights():
+func initialize_random_weights() -> void:
 	for i in range(INIT_POPULATION_SIZE):
 		population.append([[randf_range(-0.7, 0.7), randf_range(-0.7, 0.7), randf_range(-0.5, 0.5)], 0])
+		
+func initialize_fitnesses() -> void:
+	for i in range(INIT_POPULATION_SIZE):
+		fitnesses.append(0)
 		
 func initialize_pipes() -> void:
 	for i in range(PIPE_POOL_COUNT):
@@ -103,7 +109,13 @@ func on_agent_died() -> void:
 		initialize_generation()
 
 func breed() -> void:
-	var parent_pairs = get_random_parent_pairs()
+	var parent_pairs = null
+	
+	if Configuration.CROSSOVER_SELECTION_METHOD == Configuration.CROSSOVER_SELECTION_METHODS.Random:
+		parent_pairs = get_random_parent_pairs()
+	elif Configuration.CROSSOVER_SELECTION_METHOD == Configuration.CROSSOVER_SELECTION_METHODS.Fitness_Based:
+		parent_pairs = get_fitness_based_parent_pairs()
+		
 	var offsprings = []
 	for couple in parent_pairs:
 		var parent_a = population[couple[0]][0]
@@ -135,7 +147,6 @@ func mutate(individual) -> Array:
 	
 	if Configuration.MUTATION_DECAY:
 		deviation /= generation
-	print('*********Deviation: ', deviation, '********')
 	
 	for i in range(len(individual)):
 		if randf() < mut_prob:
@@ -151,25 +162,76 @@ func get_random_parent_pairs() -> Array:
 		
 	return pairs
 
+func get_fitness_based_parent_pairs() -> Array:
+	var pairs = []
+	var mean_fitness = get_mean(fitnesses)
+	var standard_deviation = get_standard_deviation(fitnesses, mean_fitness)
+	var z_scores = get_z_scores(fitnesses, mean_fitness, standard_deviation)
+	
+	var selected_breeding_indices = []
+	
+	var index = 0
+	for z_score in z_scores:
+		if z_score >= 0:
+			selected_breeding_indices.append(index)
+		else:
+			break
+		index += 1 
+		
+	for i in range(Configuration.NUM_PAIRINGS):
+		pairs.append(Vector2i(randi_range(0, len(selected_breeding_indices) - 1), randi_range(0, len(selected_breeding_indices) - 1)))
+
+	return pairs
+	
+func get_mean(arr: Array) -> float:
+	var sum = 0
+	for val in arr:
+		sum += val
+		
+	return sum / len(arr)
+	
+func get_standard_deviation(arr: Array, mean: float) -> float:
+	var sum_of_squared_mean_deviation = 0.0
+	for val in arr:
+		sum_of_squared_mean_deviation += (val - mean) ** 2
+	
+	var standard_deviation = sqrt(sum_of_squared_mean_deviation/ (len(arr) - 1))
+	return standard_deviation
+
+func get_z_scores(arr: Array, mean: float, std_dev: float) -> Array:
+	var z_scores = []
+	
+	for val in arr:
+		var z_score = 0
+		
+		if std_dev != 0:
+			z_score = (val - mean) / std_dev
+
+		z_scores.append(z_score)
+	
+	return z_scores
+	
 func select_fittest() -> void:
-	var fitnesses = []
+	var fitness_population_pairs = []
 	for i in range(len(population)):
 		var weights = population[i]
 		var agent = agents[i]
 		var fitness = agent.last_time_alive - generation_start_time
-		fitnesses.append([fitness, weights])
+		fitness_population_pairs.append([fitness, weights])
 	
-	fitnesses.sort_custom(func(a, b): return a[0] > b[0])
-	
+	fitness_population_pairs.sort_custom(func(a, b): return a[0] > b[0])
+
 	population.clear()
 	agents.clear()
-	for i in range(mini(Configuration.SELECTION_SIZE, len(fitnesses))):
-		population.append(fitnesses[i][1])
+	fitnesses.clear()
+	for i in range(mini(Configuration.SELECTION_SIZE, len(fitness_population_pairs))):
+		fitnesses.append(fitness_population_pairs[i][0])
+		population.append(fitness_population_pairs[i][1])
 	
 	var log = 'Generation ended. Best fit:\n'
 	print('Generation ended. Best fit:')
-	print('\t', fitnesses[0][1][0], ' Born in generation: ', fitnesses[0][1][1])
-	log += '\t' + str(fitnesses[0][1][0]) + ' Born in generation: ' + str(fitnesses[0][1][1]) + '\n\n'
+	print('\t', fitness_population_pairs[0][1][0], ' Born in generation: ', fitness_population_pairs[0][1][1])
+	log += '\t' + str(fitness_population_pairs[0][1][0]) + ' Born in generation: ' + str(fitness_population_pairs[0][1][1]) + '\n\n'
 	print()
 	print('New population pool:')
 	log += 'New population pool:\n'

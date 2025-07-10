@@ -23,14 +23,15 @@ func on_item_selected(index: int) -> void:
 	elif type == menu_type.TEXT_BASED:
 		%MenuButton.text = %MenuButton.get_popup().get_item_text(index)
 	
-	%MenuButton.get_popup().set_item_checked(index, true)
-	disable_except(index)
+	set_active_item_index(index)
 	
 func read_from_configuration() -> void:
+	var index = Configuration.get(configuration_name)
+	set_active_item_index(index)
 	if type == menu_type.GRAPHICAL:
-		%MenuButton.icon = %MenuButton.get_popup().get_item_icon(Configuration.get(configuration_name))
+		%MenuButton.icon = %MenuButton.get_popup().get_item_icon(index)
 	elif type == menu_type.TEXT_BASED:
-		%MenuButton.text = %MenuButton.get_popup().get_item_text(Configuration.get(configuration_name))
+		%MenuButton.text = %MenuButton.get_popup().get_item_text(index)
 
 	%WarningIcon.hide_icon()
 
@@ -49,3 +50,7 @@ func get_active_item_index() -> int:
 			return i
 	
 	return -1
+	
+func set_active_item_index(index: int) -> void:
+	%MenuButton.get_popup().set_item_checked(index, true)
+	disable_except(index)

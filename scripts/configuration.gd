@@ -1,5 +1,7 @@
 extends Node
 
+enum CROSSOVER_SELECTION_METHODS { Random, Fitness_Based }
+
 @export var SELECTION_SIZE: int = 10
 @export var NUM_PAIRINGS: int = 5
 @export var MUTATION_DEVIATION: float = 0.8
@@ -10,3 +12,4 @@ extends Node
 		MUTATION_PROBABILITY = clampf(value, 0.0, 1.0)
 @export var MUTATION_DECAY: bool = true
 @export var BIRD_INDEX: int = 0
+@export var CROSSOVER_SELECTION_METHOD: CROSSOVER_SELECTION_METHODS

@@ -5,3 +5,4 @@
 [node name="Configuration" type="Node"]
 script = ExtResource("1_hc4xr")
 SELECTION_SIZE = 5
+CROSSOVER_SELECTION_METHOD = 1
