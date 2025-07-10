@@ -3,7 +3,10 @@ extends Control
 @export var configuration_name: String
 
 func _on_h_slider_value_changed(value: float) -> void:
-	%WarningIcon.show_icon()
+	if value != Configuration.get(configuration_name):
+		%WarningIcon.show_icon()
+	else:
+		%WarningIcon.hide_icon()
 
 func read_from_configuration() -> void:
 	%HSlider.value = Configuration.get(configuration_name)

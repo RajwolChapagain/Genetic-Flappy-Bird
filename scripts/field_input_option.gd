@@ -3,8 +3,11 @@ extends Control
 @export var configuration_name: String
 
 func _on_line_edit_text_changed(new_text: String) -> void:
-	%WarningIcon.show_icon()
-
+	if int(new_text) != Configuration.get(configuration_name):
+		%WarningIcon.show_icon()
+	else:
+		%WarningIcon.hide_icon()
+		
 func read_from_configuration() -> void:
 	%LineEdit.text = str(Configuration.get(configuration_name))
 
