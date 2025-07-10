@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ccwxjsrgj2dpp" path="res://scenes/menu_option.tscn" id="1_idcef"]
 
 [node name="CrossoverSelectionMethodOption" instance=ExtResource("1_idcef")]
+tooltip_text = "Criteria for choosing individuals that get to brith offsprings"
 configuration_name = "CROSSOVER_SELECTION_METHOD"
 type = 1
 

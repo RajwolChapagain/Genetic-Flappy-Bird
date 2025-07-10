@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://baxdlxingcybo" path="res://assets/birds/green_dragon/PNG/frame-1.png" id="3_oa0cp"]
 
 [node name="BirdSelectionMenuOption" instance=ExtResource("1_47jnq")]
+tooltip_text = "The bird sprite to use"
 configuration_name = "BIRD_INDEX"
 icon_max_width = 80
 
@@ -12,7 +13,6 @@ icon_max_width = 80
 text = "Bird Sprite:"
 
 [node name="MenuButton" parent="HBoxContainer" index="1"]
-size_flags_horizontal = 3
 flat = false
 icon_alignment = 1
 expand_icon = true

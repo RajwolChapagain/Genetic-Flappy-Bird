@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://buxc26bbk71bn" path="res://scenes/check_button_option.tscn" id="1_wk2p1"]
 
 [node name="MutationDecayOption" instance=ExtResource("1_wk2p1")]
-tooltip_text = "Whether mutation deviation decays each"
+tooltip_text = "Whether mutation deviation decays as generations progress"
 configuration_name = "MUTATION_DECAY"
 
 [node name="Label" parent="HBoxContainer" index="0"]
