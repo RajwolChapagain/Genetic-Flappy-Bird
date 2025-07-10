@@ -10,7 +10,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_cy26e")
-configuration_name = "SELECTION_SIZE"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1

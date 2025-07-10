@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3y26g8fl6mmm"]
+
+[ext_resource type="PackedScene" uid="uid://du2k0rcpjfwlv" path="res://scenes/field_input_option.tscn" id="1_ldgm7"]
+
+[node name="InitialPopulationSizeOption" instance=ExtResource("1_ldgm7")]
+tooltip_text = "Population size at the start of simulation"
+configuration_name = "INITIAL_POPULATION_SIZE"
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Initial Population Size:"

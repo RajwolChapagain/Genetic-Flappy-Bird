@@ -2,7 +2,6 @@ extends Node
 
 @export var PIPE_SCENE: PackedScene
 @export var AGENT_SCENE: PackedScene
-@export var INIT_POPULATION_SIZE: int = 10
 var pipe_queue = []
 var population = []
 var fitnesses = []
@@ -23,11 +22,11 @@ func _ready() -> void:
 	get_tree().call_group("option", "read_from_configuration")
 	
 func initialize_random_weights() -> void:
-	for i in range(INIT_POPULATION_SIZE):
+	for i in range(Configuration.INITIAL_POPULATION_SIZE):
 		population.append([[randf_range(-0.7, 0.7), randf_range(-0.7, 0.7), randf_range(-0.5, 0.5)], 0])
 		
 func initialize_fitnesses() -> void:
-	for i in range(INIT_POPULATION_SIZE):
+	for i in range(Configuration.INITIAL_POPULATION_SIZE):
 		fitnesses.append(0)
 		
 func initialize_pipes() -> void:

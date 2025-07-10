@@ -2,6 +2,7 @@ extends Node
 
 enum CROSSOVER_SELECTION_METHODS { Random, Fitness_Based }
 
+@export var INITIAL_POPULATION_SIZE: int = 10
 @export var SELECTION_SIZE: int = 10
 @export var NUM_PAIRINGS: int = 5
 @export var MUTATION_DEVIATION: float = 0.8

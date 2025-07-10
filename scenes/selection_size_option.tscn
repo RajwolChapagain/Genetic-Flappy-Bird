@@ -4,6 +4,7 @@
 
 [node name="SelectionSizeOption" instance=ExtResource("1_grnpx")]
 tooltip_text = "Number of birds selected as fittest at the end of each generation"
+configuration_name = "SELECTION_SIZE"
 
 [node name="Label" parent="HBoxContainer" index="0"]
 text = "Selection Size:"
