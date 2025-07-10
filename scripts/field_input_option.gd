@@ -6,10 +6,11 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 	if int(new_text) != Configuration.get(configuration_name):
 		%WarningIcon.show_icon()
 	else:
-		%WarningIcon.hide_icon()
+		hide_requires_next_generation_icon()
 		
 func read_from_configuration() -> void:
 	%LineEdit.text = str(Configuration.get(configuration_name))
+	%LineEdit.placeholder_text = str(Configuration.get(configuration_name))
 
 func write_to_configuration() -> void:
 	Configuration.set(configuration_name, int(%LineEdit.text))
