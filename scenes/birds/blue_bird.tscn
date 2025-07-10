@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dys35hkmeigwn"]
+
+[ext_resource type="Texture2D" uid="uid://dkowj8pixl5kn" path="res://assets/birds/blue_bird/Transparent PNG/frame-1.png" id="1_4w26p"]
+
+[node name="BlueBird" type="Sprite2D"]
+scale = Vector2(0.107425, 0.107425)
+texture = ExtResource("1_4w26p")

@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bte3glnek8ttp"]
+[gd_scene load_steps=6 format=3 uid="uid://bte3glnek8ttp"]
 
 [ext_resource type="Script" uid="uid://bgta8k4f05vny" path="res://scripts/agent.gd" id="1_umeaf"]
-[ext_resource type="Texture2D" uid="uid://c448t175kobxa" path="res://assets/bird.png" id="2_umeaf"]
+[ext_resource type="PackedScene" uid="uid://dys35hkmeigwn" path="res://scenes/birds/blue_bird.tscn" id="2_dg1j7"]
+[ext_resource type="PackedScene" uid="uid://c78df3fih1y7y" path="res://scenes/birds/green_dragon.tscn" id="3_qeyy3"]
 [ext_resource type="Texture2D" uid="uid://c2k0w0qnxofyi" path="res://assets/crown.png" id="3_yc63n"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dhb2b"]
-radius = 37.054
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc63n"]
+size = Vector2(58, 50)
 
 [node name="Agent" type="RigidBody2D" groups=["agent"]]
 collision_layer = 4
@@ -13,14 +14,11 @@ collision_mask = 3
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_umeaf")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.12, 0.12)
-texture = ExtResource("2_umeaf")
+BIRDS = Array[PackedScene]([ExtResource("2_dg1j7"), ExtResource("3_qeyy3")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_dhb2b")
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_yc63n")
 
 [node name="Crown" type="Sprite2D" parent="."]
 unique_name_in_owner = true

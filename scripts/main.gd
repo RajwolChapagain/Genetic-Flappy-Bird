@@ -41,6 +41,7 @@ func initialize_agents() -> void:
 		agent.agent_died.connect(on_agent_died)
 		agent.initialize(population[i][0])
 		agents.append(agent)
+		agent.bird_index = Configuration.BIRD_INDEX
 		call_deferred("add_child", agent)
 		
 		if i == 0:

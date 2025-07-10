@@ -1,12 +1,18 @@
 extends RigidBody2D
 
 @export var JUMP_VEL: int = 400
+@export var BIRDS: Array[PackedScene]
+@export var bird_index: int = 0
+
 var get_closest_pipe_position: Callable
 var weights: Array
 var alive: bool = true
 var last_time_alive: float = 0.0
 signal agent_died
 
+func _ready() -> void:
+	set_bird(bird_index)
+	
 func _physics_process(delta: float) -> void:
 	if not alive:
 		return
@@ -50,5 +56,13 @@ func crown() -> void:
 	%Crown.visible = true
 
 func increase_z_index() -> void:
-	$Sprite2D.z_index = 3
-	%Crown.z_index = 3
+	z_index = 3
+	
+func set_bird(index: int = 0) -> void:
+	var bird = BIRDS[index].instantiate()
+	bird.name = "BirdSprite"
+	bird.set_unique_name_in_owner(true)
+	add_child(bird)
+
+func set_bird_index(value: int) -> void:
+	bird_index = clamp(value, 0, len(BIRDS) - 1)

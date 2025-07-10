@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://w5sw4x4mu7eq"]
+[gd_scene load_steps=8 format=3 uid="uid://w5sw4x4mu7eq"]
 
 [ext_resource type="Script" uid="uid://phuk4q6qdnb0" path="res://scripts/h_expandable_dock.gd" id="1_8lkuh"]
 [ext_resource type="PackedScene" uid="uid://uldqtmf6j3nr" path="res://scenes/selection_size_option.tscn" id="2_4txsr"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bcp6tvesajg18" path="res://scenes/mutation_deviation_option.tscn" id="4_nnxka"]
 [ext_resource type="PackedScene" uid="uid://bxpaoam5ohu1y" path="res://scenes/mutation_probability_option.tscn" id="5_udbgt"]
 [ext_resource type="PackedScene" uid="uid://csujib5v5rduj" path="res://scenes/mutation_decay_option.tscn" id="6_8k3de"]
+[ext_resource type="PackedScene" uid="uid://dcy2rnxib52jk" path="res://scenes/bird_selection_menu_option.tscn" id="7_dmbg3"]
 
 [node name="HExpandableDock" type="Control"]
 custom_minimum_size = Vector2(200, 0)
@@ -73,6 +74,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MutationDecayOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_8k3de")]
+layout_mode = 2
+
+[node name="BirdSelectionMenuOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_dmbg3")]
 layout_mode = 2
 
 [connection signal="pressed" from="Items/Button" to="." method="_on_button_pressed"]

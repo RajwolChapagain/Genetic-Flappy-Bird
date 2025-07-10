@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c78df3fih1y7y"]
+
+[ext_resource type="Texture2D" uid="uid://baxdlxingcybo" path="res://assets/birds/green_dragon/PNG/frame-1.png" id="1_a4s41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiaxn"]
+size = Vector2(58, 50)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.109145, 0.109145)
+texture = ExtResource("1_a4s41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_qiaxn")

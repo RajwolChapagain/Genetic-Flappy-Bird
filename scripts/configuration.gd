@@ -9,3 +9,4 @@ extends Node
 	set(value):
 		MUTATION_PROBABILITY = clampf(value, 0.0, 1.0)
 @export var MUTATION_DECAY: bool = true
+@export var BIRD_INDEX: int = 0
