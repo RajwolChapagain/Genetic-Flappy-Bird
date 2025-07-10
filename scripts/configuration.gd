@@ -2,6 +2,8 @@ extends Node
 
 enum CROSSOVER_SELECTION_METHODS { Random, Fitness_Based }
 
+@onready var RANDOM_SEED: int
+
 @export var INITIAL_POPULATION_SIZE: int = 10
 @export var SELECTION_SIZE: int = 10
 @export var NUM_PAIRINGS: int = 5
@@ -14,3 +16,6 @@ enum CROSSOVER_SELECTION_METHODS { Random, Fitness_Based }
 @export var MUTATION_DECAY: bool = true
 @export var BIRD_INDEX: int = 0
 @export var CROSSOVER_SELECTION_METHOD: CROSSOVER_SELECTION_METHODS
+
+func _ready() -> void:
+	RANDOM_SEED = randi_range(-99999, 99999)

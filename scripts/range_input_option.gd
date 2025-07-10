@@ -7,8 +7,10 @@ func _on_h_slider_value_changed(value: float) -> void:
 
 func read_from_configuration() -> void:
 	%HSlider.value = Configuration.get(configuration_name)
-	%WarningIcon.hide_icon()
 
 func write_to_configuration() -> void:
 	Configuration.set(configuration_name, %HSlider.value)
-	%WarningIcon.hide_icon()
+
+func hide_requires_next_generation_icon() -> void:
+	if %WarningIcon.type == %WarningIcon.types.REQUIRES_NEXT_GENERATION:
+		%WarningIcon.hide_icon()

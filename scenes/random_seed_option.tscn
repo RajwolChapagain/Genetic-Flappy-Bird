@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dugusrbpsl7ar"]
+
+[ext_resource type="PackedScene" uid="uid://du2k0rcpjfwlv" path="res://scenes/field_input_option.tscn" id="1_aig0i"]
+
+[node name="RandomSeedOption" instance=ExtResource("1_aig0i")]
+tooltip_text = "Seed to use for randomizing variables including initial weights, biases, pipe positioning, etc."
+configuration_name = "RANDOM_SEED"
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Random Seed:"
+
+[node name="LineEdit" parent="HBoxContainer" index="1"]
+placeholder_text = ""
+max_length = 6

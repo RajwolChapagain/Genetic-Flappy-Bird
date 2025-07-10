@@ -15,11 +15,14 @@ var generation = 1
 var point_awarded = false
 
 func _ready() -> void:
+	seed(Configuration.RANDOM_SEED)
+	print("random seed is ", Configuration.RANDOM_SEED)
 	initialize_pipes()
 	initialize_random_weights()
 	initialize_fitnesses()
 	initialize_generation()
 	get_tree().call_group("option", "read_from_configuration")
+	get_tree().call_group("option", "hide_requires_next_generation_icon")
 	
 func initialize_random_weights() -> void:
 	for i in range(Configuration.INITIAL_POPULATION_SIZE):
@@ -259,6 +262,7 @@ func reset_world() -> void:
 	generation += 1
 	%HUD.set_generation(generation)
 	get_tree().call_group("option", "write_to_configuration")
+	get_tree().call_group("option", "hide_requires_next_generation_icon")
 	
 func initialize_generation() -> void:
 	print('Generation: ' + str(generation))
@@ -269,4 +273,3 @@ func initialize_generation() -> void:
 
 func load_configuration() -> void:
 	get_tree().call_group("option", "read_from_configuration")
-	

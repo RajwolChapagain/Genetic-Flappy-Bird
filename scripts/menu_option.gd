@@ -33,11 +33,8 @@ func read_from_configuration() -> void:
 	elif type == menu_type.TEXT_BASED:
 		%MenuButton.text = %MenuButton.get_popup().get_item_text(index)
 
-	%WarningIcon.hide_icon()
-
 func write_to_configuration() -> void:
 	Configuration.set(configuration_name, get_active_item_index())
-	%WarningIcon.hide_icon()
 
 func disable_except(index: int) -> void:
 	for i in range(%MenuButton.get_popup().item_count):
@@ -54,3 +51,7 @@ func get_active_item_index() -> int:
 func set_active_item_index(index: int) -> void:
 	%MenuButton.get_popup().set_item_checked(index, true)
 	disable_except(index)
+
+func hide_requires_next_generation_icon() -> void:
+	if %WarningIcon.type == %WarningIcon.types.REQUIRES_NEXT_GENERATION:
+		%WarningIcon.hide_icon()
