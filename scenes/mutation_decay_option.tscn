@@ -1,13 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://csujib5v5rduj"]
+[gd_scene load_steps=2 format=3 uid="uid://cbss67wrcokhi"]
 
-[ext_resource type="PackedScene" uid="uid://buxc26bbk71bn" path="res://scenes/check_button_option.tscn" id="1_wk2p1"]
+[ext_resource type="PackedScene" uid="uid://ccwxjsrgj2dpp" path="res://scenes/menu_option.tscn" id="1_wk2p1"]
 
 [node name="MutationDecayOption" instance=ExtResource("1_wk2p1")]
-tooltip_text = "Whether mutation deviation decays as generations progress"
+tooltip_text = "Function to use for decaying mutation value as generations progress"
 configuration_name = "MUTATION_DECAY"
+type = 1
 
 [node name="Label" parent="HBoxContainer" index="0"]
 text = "Mutation Decay:"
+
+[node name="MenuButton" parent="HBoxContainer" index="1"]
+item_count = 4
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Exponential"
+popup/item_1/id = 1
+popup/item_2/text = "Inverse Time"
+popup/item_2/id = 2
+popup/item_3/text = "Quadratic"
+popup/item_3/id = 3
 
 [node name="WarningIcon" parent="HBoxContainer" index="2"]
 type = 0

@@ -152,8 +152,17 @@ func mutate(individual) -> Array:
 	var deviation = Configuration.MUTATION_DEVIATION
 	var mut_prob = Configuration.MUTATION_PROBABILITY
 	
-	if Configuration.MUTATION_DECAY:
-		deviation /= generation
+	if Configuration.MUTATION_DECAY != Configuration.MUTATION_DECAY_METHODS.None:
+		if Configuration.MUTATION_DECAY == Configuration.MUTATION_DECAY_METHODS.Exponential:
+			var decay_constant = 0.3
+			deviation = deviation * (2.71828 ** (-decay_constant * (generation - 1)))
+		elif Configuration.MUTATION_DECAY == Configuration.MUTATION_DECAY_METHODS.Inverse_Time:
+			deviation /= generation
+		elif Configuration.MUTATION_DECAY == Configuration.MUTATION_DECAY_METHODS.Quadratic:
+			deviation /= (generation ** 2)
+	
+	print('Deviation: ', deviation)
+	print()
 	
 	for i in range(len(individual)):
 		if randf() < mut_prob:
