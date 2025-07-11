@@ -138,8 +138,13 @@ func breed() -> void:
 
 func crossover(parent_a, parent_b) -> Array:
 	var offspring = []
-	for i in range(len(parent_a)):
-		offspring.append((parent_a[i] + parent_b[i]) / 2.0)
+	
+	if Configuration.GENE_CROSSOVER_METHOD == Configuration.GENE_CROSSOVER_METHODS.Averaging:
+		for i in range(len(parent_a)):
+			offspring.append((parent_a[i] + parent_b[i]) / 2.0)
+	elif Configuration.GENE_CROSSOVER_METHOD == Configuration.GENE_CROSSOVER_METHODS.Gene_Wise:
+		for i in range(len(parent_a)):
+			offspring.append([parent_a[i], parent_b[i]].pick_random())
 			
 	return offspring
 
