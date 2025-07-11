@@ -18,6 +18,9 @@ func _input(event: InputEvent) -> void:
 	if not is_player:
 		return
 		
+	if not alive:
+		return
+		
 	if event.is_action_pressed("flap"):
 		flap()
 		

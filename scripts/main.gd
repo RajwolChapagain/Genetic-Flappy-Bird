@@ -14,6 +14,8 @@ var generation_start_time
 var generation = 1
 var point_awarded = false
 var player_dead = true
+var player_fitness = 0
+var crown_player = false
 
 func _ready() -> void:
 	seed(Configuration.RANDOM_SEED)
@@ -54,8 +56,12 @@ func initialize_agents() -> void:
 		call_deferred("add_child", agent)
 		
 		if i == 0:
-			agent.crown()
-			agent.increase_z_index()
+			if fitnesses[i] >= player_fitness:
+				agent.crown()
+				agent.increase_z_index()
+				crown_player = false
+			else:
+				crown_player = true
 
 func on_agents_entered_pipe(agent):
 	point_awarded = false
@@ -106,6 +112,7 @@ func get_closest_pipe_position() -> Vector2:
 func on_agent_died(agent) -> void:
 	if agent.is_player:
 		player_dead = true
+		player_fitness = agent.last_time_alive - generation_start_time
 	else:
 		dead_count += 1
 		
@@ -289,6 +296,10 @@ func initialize_generation() -> void:
 	initialize_agents()
 	if Configuration.PLAY:
 		initialize_player()
+	else:
+		crown_player = false
+		player_fitness = 0
+		player_dead = true
 	
 func initialize_player() -> void:
 	var player = AGENT_SCENE.instantiate()
@@ -297,6 +308,8 @@ func initialize_player() -> void:
 	player.increase_z_index()
 	player.agent_died.connect(on_agent_died)
 	player.position = $AgentOrigin.position
+	if crown_player:
+		player.crown()
 	call_deferred("add_child", player)
 	player_dead = false
 	
