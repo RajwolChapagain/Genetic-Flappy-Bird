@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkp2jhjt7iv4m"]
+
+[ext_resource type="PackedScene" uid="uid://buxc26bbk71bn" path="res://scenes/check_button_option.tscn" id="1_fm18h"]
+
+[node name="PlayOption" instance=ExtResource("1_fm18h")]
+tooltip_text = "Play as a bird in the next generation"
+configuration_name = "PLAY"
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Join as Player:"
+
+[node name="WarningIcon" parent="HBoxContainer" index="2"]
+type = 0

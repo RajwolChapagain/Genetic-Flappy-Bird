@@ -18,6 +18,7 @@ enum MUTATION_DECAY_METHODS { None, Exponential, Inverse_Time, Quadratic }
 @export var BIRD_INDEX: int = 0
 @export var CROSSOVER_SELECTION_METHOD: CROSSOVER_SELECTION_METHODS
 @export var GENE_CROSSOVER_METHOD: GENE_CROSSOVER_METHODS
+@export var PLAY: bool = false
 
 func _ready() -> void:
 	RANDOM_SEED = randi_range(-99999, 99999)

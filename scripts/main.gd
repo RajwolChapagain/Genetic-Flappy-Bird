@@ -13,6 +13,7 @@ var dead_count = 0
 var generation_start_time
 var generation = 1
 var point_awarded = false
+var player_dead = true
 
 func _ready() -> void:
 	seed(Configuration.RANDOM_SEED)
@@ -102,13 +103,18 @@ func get_closest_pipe_position() -> Vector2:
 
 	return closest_pipe_global_pos
 
-func on_agent_died() -> void:
-	dead_count += 1
-	if dead_count == len(population):
-		select_fittest()
-		reset_world()
-		load_configuration()
-		initialize_generation()
+func on_agent_died(agent) -> void:
+	if agent.is_player:
+		player_dead = true
+	else:
+		dead_count += 1
+		
+	if player_dead:
+		if dead_count == len(population):
+			select_fittest()
+			reset_world()
+			load_configuration()
+			initialize_generation()
 
 func breed() -> void:
 	var parent_pairs = null
@@ -160,10 +166,7 @@ func mutate(individual) -> Array:
 			deviation /= generation
 		elif Configuration.MUTATION_DECAY == Configuration.MUTATION_DECAY_METHODS.Quadratic:
 			deviation /= (generation ** 2)
-	
-	print('Deviation: ', deviation)
-	print()
-	
+
 	for i in range(len(individual)):
 		if randf() < mut_prob:
 			individual[i] = randfn(individual[i], deviation)
@@ -284,6 +287,18 @@ func initialize_generation() -> void:
 	generation_start_time = Time.get_ticks_msec()
 	breed()
 	initialize_agents()
-
+	if Configuration.PLAY:
+		initialize_player()
+	
+func initialize_player() -> void:
+	var player = AGENT_SCENE.instantiate()
+	player.bird_index = len(player.BIRDS) - 1
+	player.is_player = true
+	player.increase_z_index()
+	player.agent_died.connect(on_agent_died)
+	player.position = $AgentOrigin.position
+	call_deferred("add_child", player)
+	player_dead = false
+	
 func load_configuration() -> void:
 	get_tree().call_group("option", "read_from_configuration")

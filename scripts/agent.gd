@@ -8,13 +8,21 @@ var get_closest_pipe_position: Callable
 var weights: Array
 var alive: bool = true
 var last_time_alive: float = 0.0
+var is_player: bool = false
 signal agent_died
 
 func _ready() -> void:
 	set_bird(bird_index)
 	
+func _input(event: InputEvent) -> void:
+	if not is_player:
+		return
+		
+	if event.is_action_pressed("flap"):
+		flap()
+		
 func _physics_process(delta: float) -> void:
-	if not alive:
+	if not alive or is_player:
 		return
 		
 	if should_flap(sense()):
@@ -50,7 +58,7 @@ func _on_body_entered(body: Node) -> void:
 	if body.is_in_group('obstacle'):
 		alive = false
 		last_time_alive = Time.get_ticks_msec()
-		agent_died.emit()
+		agent_died.emit(self)
 
 func crown() -> void:
 	%Crown.visible = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bte3glnek8ttp"]
+[gd_scene load_steps=7 format=3 uid="uid://bte3glnek8ttp"]
 
 [ext_resource type="Script" uid="uid://bgta8k4f05vny" path="res://scripts/agent.gd" id="1_umeaf"]
 [ext_resource type="PackedScene" uid="uid://dys35hkmeigwn" path="res://scenes/birds/blue_bird.tscn" id="2_dg1j7"]
 [ext_resource type="PackedScene" uid="uid://c78df3fih1y7y" path="res://scenes/birds/green_dragon.tscn" id="3_qeyy3"]
 [ext_resource type="Texture2D" uid="uid://c2k0w0qnxofyi" path="res://assets/crown.png" id="3_yc63n"]
+[ext_resource type="PackedScene" uid="uid://dl5t5m1j13k7e" path="res://scenes/birds/player_bird.tscn" id="4_dg1j7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc63n"]
 size = Vector2(58, 50)
@@ -14,7 +15,7 @@ collision_mask = 3
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_umeaf")
-BIRDS = Array[PackedScene]([ExtResource("2_dg1j7"), ExtResource("3_qeyy3")])
+BIRDS = Array[PackedScene]([ExtResource("2_dg1j7"), ExtResource("3_qeyy3"), ExtResource("4_dg1j7")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, -1)
