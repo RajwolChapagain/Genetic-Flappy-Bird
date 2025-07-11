@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ccwxjsrgj2dpp" path="res://scenes/menu_option.tscn" id="1_tghj4"]
 
 [node name="GeneCrossoverMethodOption" instance=ExtResource("1_tghj4")]
-tooltip_text = "How offspring gene gets created from their parents."
+tooltip_text = "How offspring gene gets created from its parents"
 configuration_name = "GENE_CROSSOVER_METHOD"
 type = 1
 
