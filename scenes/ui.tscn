@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://3de41qa61pva"]
+[gd_scene load_steps=8 format=3 uid="uid://3de41qa61pva"]
 
 [ext_resource type="PackedScene" uid="uid://w5sw4x4mu7eq" path="res://scenes/h_expandable_dock.tscn" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://cbt15fitw1rhk" path="res://scripts/ui.gd" id="1_yev5y"]
-[ext_resource type="Texture2D" uid="uid://drdep43aucxj" path="res://assets/ui/play_button.svg" id="2_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://dne5e763024td" path="res://assets/ui/play_button.png" id="2_8dubc"]
 [ext_resource type="PackedScene" uid="uid://dc2nob4gwua7v" path="res://scenes/v_expandable_dock.tscn" id="2_x4jx1"]
-[ext_resource type="Texture2D" uid="uid://bmkq08hf8f2mw" path="res://assets/ui/pause_button.svg" id="3_wm3ai"]
-[ext_resource type="Texture2D" uid="uid://d1u5xrg2w7hfb" path="res://assets/ui/reset_button.svg" id="4_8dubc"]
+[ext_resource type="Texture2D" uid="uid://rvsaliki7xuc" path="res://assets/ui/reset_button.png" id="4_8dubc"]
+[ext_resource type="Texture2D" uid="uid://dawju3c38n2oe" path="res://assets/ui/pause_button.png" id="4_p7vwb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktti3"]
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -16,8 +18,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yev5y")
-play_button_icon = ExtResource("2_gdt2y")
-pause_button_icon = ExtResource("3_wm3ai")
+play_button_icon = ExtResource("2_8dubc")
+pause_button_icon = ExtResource("4_p7vwb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -32,10 +34,11 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="ControlPanel" type="Panel" parent="MarginContainer"]
-custom_minimum_size = Vector2(100, 60)
+custom_minimum_size = Vector2(160, 120)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ktti3")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ControlPanel"]
 layout_mode = 1
@@ -62,7 +65,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 toggle_mode = true
 button_pressed = true
-icon = ExtResource("3_wm3ai")
+icon = ExtResource("4_p7vwb")
 flat = true
 icon_alignment = 1
 expand_icon = true

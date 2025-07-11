@@ -7,14 +7,37 @@
    viewBox="0 0 753.09717 731.84766"
    version="1.1"
    id="svg1"
+   sodipodi:docname="play_button.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.68213293"
+     inkscape:cx="199.37463"
+     inkscape:cy="367.96347"
+     inkscape:window-width="1745"
+     inkscape:window-height="915"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
   <defs
      id="defs1">
     <filter
        style="color-interpolation-filters:sRGB"
        id="filter66"
-       x="-0.04251345"
+       x="-0.042513446"
        y="-0.036971832"
        width="1.1221002"
        height="1.106188">
@@ -51,7 +74,10 @@
   </defs>
   <g
      id="layer1"
-     transform="translate(-583.45117,-174.0762)">
+     transform="translate(-583.45117,-174.0762)"
+     inkscape:export-filename="play_button.png"
+     inkscape:export-xdpi="6.3736792"
+     inkscape:export-ydpi="6.3736792">
     <ellipse
        style="display:inline;fill:#ffcc00;stroke:none;stroke-width:20;stroke-dasharray:none;stroke-opacity:1"
        id="path1"
