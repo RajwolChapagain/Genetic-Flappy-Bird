@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://db46t00uv5q7c"]
+
+[ext_resource type="Texture2D" uid="uid://c77415a2h1yw4" path="res://assets/birds/pink_bird/PNG/frame-1.png" id="1_g0k8m"]
+
+[node name="PinkBird" type="Sprite2D"]
+position = Vector2(-7, 0)
+scale = Vector2(0.116727, 0.116727)
+texture = ExtResource("1_g0k8m")
