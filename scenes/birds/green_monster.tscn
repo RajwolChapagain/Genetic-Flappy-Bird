@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7msnjqlxjuko"]
+
+[ext_resource type="Texture2D" uid="uid://cc57mgnnffgo7" path="res://assets/birds/green_monster/Transparent PNG/flying/frame-1.png" id="1_vgn5b"]
+
+[node name="GreenMonster" type="Sprite2D"]
+position = Vector2(-6, -2)
+scale = Vector2(0.0634021, 0.0634021)
+texture = ExtResource("1_vgn5b")
