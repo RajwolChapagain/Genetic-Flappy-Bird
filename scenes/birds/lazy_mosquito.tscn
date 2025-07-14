@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8sb7qx6sdu8w"]
+
+[ext_resource type="Texture2D" uid="uid://dssbo1rg7h2ef" path="res://assets/birds/lazy_mosquito/png/mosquito_00.png" id="1_mvrpy"]
+
+[node name="LazyMosquito" type="Sprite2D"]
+scale = Vector2(0.567329, 0.567329)
+texture = ExtResource("1_mvrpy")
