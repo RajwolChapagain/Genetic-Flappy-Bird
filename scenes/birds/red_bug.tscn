@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq16c33bnkbe1"]
+
+[ext_resource type="Texture2D" uid="uid://1vclfvg1jqub" path="res://assets/birds/red_bug/Transparent PNG/flying/frame-1.png" id="1_i32f3"]
+
+[node name="RedBug" type="Sprite2D"]
+position = Vector2(-8, -3)
+scale = Vector2(0.11745, 0.11745)
+texture = ExtResource("1_i32f3")
