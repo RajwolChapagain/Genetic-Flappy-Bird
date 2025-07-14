@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://3de41qa61pva"]
+[gd_scene load_steps=9 format=3 uid="uid://3de41qa61pva"]
 
 [ext_resource type="PackedScene" uid="uid://w5sw4x4mu7eq" path="res://scenes/h_expandable_dock.tscn" id="1_nt7q6"]
+[ext_resource type="Theme" uid="uid://bijinaa7s3yl2" path="res://resources/ui.tres" id="1_p7vwb"]
 [ext_resource type="Script" uid="uid://cbt15fitw1rhk" path="res://scripts/ui.gd" id="1_yev5y"]
 [ext_resource type="Texture2D" uid="uid://dne5e763024td" path="res://assets/ui/play_button.png" id="2_8dubc"]
 [ext_resource type="PackedScene" uid="uid://dc2nob4gwua7v" path="res://scenes/v_expandable_dock.tscn" id="2_x4jx1"]
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_p7vwb")
 script = ExtResource("1_yev5y")
 play_button_icon = ExtResource("2_8dubc")
 pause_button_icon = ExtResource("4_p7vwb")

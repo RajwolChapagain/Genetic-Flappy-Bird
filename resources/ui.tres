@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bijinaa7s3yl2"]
+
+[ext_resource type="FontFile" uid="uid://bxqxm5o04y0fr" path="res://assets/fonts/nunito/static/Nunito-Medium.ttf" id="1_pxeie"]
+
+[resource]
+Label/fonts/font = ExtResource("1_pxeie")
