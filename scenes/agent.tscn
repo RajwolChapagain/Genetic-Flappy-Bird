@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bte3glnek8ttp"]
+[gd_scene load_steps=11 format=3 uid="uid://bte3glnek8ttp"]
 
 [ext_resource type="Script" uid="uid://bgta8k4f05vny" path="res://scripts/agent.gd" id="1_umeaf"]
 [ext_resource type="PackedScene" uid="uid://dys35hkmeigwn" path="res://scenes/birds/blue_bird.tscn" id="2_dg1j7"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dl5t5m1j13k7e" path="res://scenes/birds/player_bird.tscn" id="4_dg1j7"]
 [ext_resource type="PackedScene" uid="uid://m07bu7fj754o" path="res://scenes/birds/bee.tscn" id="4_qeyy3"]
 [ext_resource type="PackedScene" uid="uid://dgr0cuielfhsn" path="res://scenes/birds/blue_bat.tscn" id="5_nkfwj"]
+[ext_resource type="PackedScene" uid="uid://bw1u68wxf5c2n" path="res://scenes/birds/brown_bird.tscn" id="7_52ahs"]
 [ext_resource type="PackedScene" uid="uid://dq16c33bnkbe1" path="res://scenes/birds/red_bug.tscn" id="7_iuhnp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dg1j7"]
@@ -18,7 +19,7 @@ collision_mask = 3
 contact_monitor = true
 max_contacts_reported = 2
 script = ExtResource("1_umeaf")
-BIRDS = Array[PackedScene]([ExtResource("2_dg1j7"), ExtResource("3_qeyy3"), ExtResource("4_qeyy3"), ExtResource("5_nkfwj"), ExtResource("7_iuhnp"), ExtResource("4_dg1j7")])
+BIRDS = Array[PackedScene]([ExtResource("2_dg1j7"), ExtResource("3_qeyy3"), ExtResource("4_qeyy3"), ExtResource("5_nkfwj"), ExtResource("7_iuhnp"), ExtResource("7_52ahs"), ExtResource("4_dg1j7")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dg1j7")

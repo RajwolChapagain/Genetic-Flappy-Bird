@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw1u68wxf5c2n"]
+
+[ext_resource type="Texture2D" uid="uid://drecf1corknpv" path="res://assets/ui/bird_icons/brown_bird.png" id="1_eqpe2"]
+
+[node name="BrownBird" type="Sprite2D"]
+position = Vector2(-2, 0)
+scale = Vector2(0.10682, 0.10682)
+texture = ExtResource("1_eqpe2")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcy2rnxib52jk"]
+[gd_scene load_steps=8 format=3 uid="uid://dcy2rnxib52jk"]
 
 [ext_resource type="PackedScene" uid="uid://ccwxjsrgj2dpp" path="res://scenes/menu_option.tscn" id="1_47jnq"]
 [ext_resource type="Texture2D" uid="uid://gmasvjo6q226" path="res://assets/ui/bird_icons/blue_bird.png" id="2_6of17"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://5fcfdwnvufnv" path="res://assets/ui/bird_icons/bee.png" id="4_6of17"]
 [ext_resource type="Texture2D" uid="uid://bakeng3u7aacm" path="res://assets/ui/bird_icons/blue_bat.png" id="5_2aaxf"]
 [ext_resource type="Texture2D" uid="uid://cissdoypxmje1" path="res://assets/ui/bird_icons/red_bug.png" id="6_wrhwu"]
+[ext_resource type="Texture2D" uid="uid://drecf1corknpv" path="res://assets/ui/bird_icons/brown_bird.png" id="7_1bw7h"]
 
 [node name="BirdSelectionMenuOption" instance=ExtResource("1_47jnq")]
 tooltip_text = "The bird sprite to use"
@@ -19,7 +20,7 @@ text = "Bird Sprite:"
 flat = false
 icon_alignment = 1
 expand_icon = true
-item_count = 5
+item_count = 6
 popup/item_0/icon = ExtResource("2_6of17")
 popup/item_0/id = 0
 popup/item_1/icon = ExtResource("3_6of17")
@@ -30,6 +31,8 @@ popup/item_3/icon = ExtResource("5_2aaxf")
 popup/item_3/id = 3
 popup/item_4/icon = ExtResource("6_wrhwu")
 popup/item_4/id = 4
+popup/item_5/icon = ExtResource("7_1bw7h")
+popup/item_5/id = 5
 
 [node name="WarningIcon" parent="HBoxContainer" index="2"]
 type = 0
