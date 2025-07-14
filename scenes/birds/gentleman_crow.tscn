@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2xfld11t2qe7"]
+
+[ext_resource type="Texture2D" uid="uid://o5srsn2eacpq" path="res://assets/birds/gentleman_crow/Flappy bird - flying gentleman sprite/skeleton-01_fly_00.png" id="1_hakck"]
+
+[node name="GentlemanCrow" type="Sprite2D"]
+position = Vector2(2, 0)
+scale = Vector2(0.0852789, 0.0852789)
+texture = ExtResource("1_hakck")
