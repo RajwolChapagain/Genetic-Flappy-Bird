@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdh1sd5morlq"]
+
+[ext_resource type="Texture2D" uid="uid://74x1w1po7t6e" path="res://assets/birds/yellow_bird/Transparent PNG/frame-1.png" id="1_0oql8"]
+
+[node name="YellowBird" type="Sprite2D"]
+position = Vector2(-5, -2)
+scale = Vector2(0.117823, 0.117823)
+texture = ExtResource("1_0oql8")
