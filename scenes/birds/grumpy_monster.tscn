@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds683tuulmjhu"]
+
+[ext_resource type="Texture2D" uid="uid://ba657sfuf0peq" path="res://assets/birds/grumpy_monster/grumpy bird sprite sheets/frame-1.png" id="1_f15xl"]
+
+[node name="GrumpyMonster" type="Sprite2D"]
+position = Vector2(-2, 8)
+scale = Vector2(0.081181, 0.081181)
+texture = ExtResource("1_f15xl")
