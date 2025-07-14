@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://baxdlxingcybo" path="res://assets/birds/green_dragon/PNG/frame-1.png" id="1_a4s41"]
 
 [node name="GreenDragon" type="Sprite2D"]
+position = Vector2(-13, 0)
 scale = Vector2(0.109145, 0.109145)
 texture = ExtResource("1_a4s41")

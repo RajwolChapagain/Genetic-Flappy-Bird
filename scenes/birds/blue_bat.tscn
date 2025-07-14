@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgr0cuielfhsn"]
+
+[ext_resource type="Texture2D" uid="uid://ebg6n27sirfy" path="res://assets/birds/blue_bat/bluebat_png/bluebat/skeleton-fly_00.png" id="1_b8yv0"]
+
+[node name="BlueBat" type="Sprite2D"]
+position = Vector2(-3, -3)
+scale = Vector2(0.145299, 0.145299)
+texture = ExtResource("1_b8yv0")
+flip_h = true

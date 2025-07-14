@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dw2ry1xp7m44w" path="res://assets/birds/player_bird.png" id="1_sgiu1"]
 
 [node name="PlayerBird" type="Sprite2D"]
-position = Vector2(0, -4)
+position = Vector2(4, -3)
 scale = Vector2(0.209581, 0.209581)
 texture = ExtResource("1_sgiu1")
