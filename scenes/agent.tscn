@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c2k0w0qnxofyi" path="res://assets/crown.png" id="3_yc63n"]
 [ext_resource type="PackedScene" uid="uid://dl5t5m1j13k7e" path="res://scenes/birds/player_bird.tscn" id="4_dg1j7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc63n"]
-size = Vector2(58, 50)
+[sub_resource type="CircleShape2D" id="CircleShape2D_dg1j7"]
+radius = 25.0
 
 [node name="Agent" type="RigidBody2D" groups=["agent"]]
 collision_layer = 4
@@ -18,8 +18,7 @@ script = ExtResource("1_umeaf")
 BIRDS = Array[PackedScene]([ExtResource("2_dg1j7"), ExtResource("3_qeyy3"), ExtResource("4_dg1j7")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, -1)
-shape = SubResource("RectangleShape2D_yc63n")
+shape = SubResource("CircleShape2D_dg1j7")
 
 [node name="Crown" type="Sprite2D" parent="."]
 unique_name_in_owner = true
