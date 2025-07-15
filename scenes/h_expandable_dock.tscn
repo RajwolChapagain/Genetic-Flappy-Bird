@@ -66,6 +66,12 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 20
 
+[node name="RandomSeedOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("10_vmain")]
+layout_mode = 2
+
+[node name="InitialPopulationSizeOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("9_8yw0x")]
+layout_mode = 2
+
 [node name="SelectionSizeOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_4txsr")]
 layout_mode = 2
 
@@ -78,22 +84,16 @@ layout_mode = 2
 [node name="MutationProbabilityOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_udbgt")]
 layout_mode = 2
 
-[node name="BirdSelectionMenuOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_dmbg3")]
+[node name="MutationDecayOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_8k3de")]
 layout_mode = 2
 
 [node name="CrossoverSelectionMethodOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("8_fy2rp")]
 layout_mode = 2
 
-[node name="InitialPopulationSizeOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("9_8yw0x")]
-layout_mode = 2
-
-[node name="RandomSeedOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("10_vmain")]
-layout_mode = 2
-
 [node name="GeneCrossoverMethodOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("11_465li")]
 layout_mode = 2
 
-[node name="MutationDecayOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("6_8k3de")]
+[node name="BirdSelectionMenuOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("7_dmbg3")]
 layout_mode = 2
 
 [node name="PlayOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("12_rtuxg")]
