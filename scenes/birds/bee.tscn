@@ -4,6 +4,6 @@
 
 [node name="Bee" type="Sprite2D"]
 position = Vector2(-2, -1)
-scale = Vector2(0.301688, 0.301688)
+scale = Vector2(0.308276, 0.308276)
 texture = ExtResource("1_od66u")
 flip_h = true
