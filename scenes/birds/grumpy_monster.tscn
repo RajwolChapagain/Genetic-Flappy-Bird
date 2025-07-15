@@ -4,5 +4,5 @@
 
 [node name="GrumpyMonster" type="Sprite2D"]
 position = Vector2(-2, 8)
-scale = Vector2(0.081181, 0.081181)
+scale = Vector2(0.0986252, 0.0986252)
 texture = ExtResource("1_f15xl")
