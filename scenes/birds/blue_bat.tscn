@@ -4,6 +4,6 @@
 
 [node name="BlueBat" type="Sprite2D"]
 position = Vector2(-4, -5)
-scale = Vector2(0.168886, 0.168886)
+scale = Vector2(0.178953, 0.178953)
 texture = ExtResource("1_b8yv0")
 flip_h = true

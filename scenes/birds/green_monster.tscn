@@ -4,5 +4,5 @@
 
 [node name="GreenMonster" type="Sprite2D"]
 position = Vector2(-6, -2)
-scale = Vector2(0.0634021, 0.0634021)
+scale = Vector2(0.0714506, 0.0714506)
 texture = ExtResource("1_vgn5b")
