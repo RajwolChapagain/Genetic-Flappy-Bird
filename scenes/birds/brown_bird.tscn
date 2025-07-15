@@ -4,5 +4,5 @@
 
 [node name="BrownBird" type="Sprite2D"]
 position = Vector2(-2, 0)
-scale = Vector2(0.10682, 0.10682)
+scale = Vector2(0.112917, 0.112917)
 texture = ExtResource("1_eqpe2")
