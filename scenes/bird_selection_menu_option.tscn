@@ -24,7 +24,6 @@ icon_max_width = 80
 text = "Bird Sprite:"
 
 [node name="MenuButton" parent="HBoxContainer" index="1"]
-flat = false
 icon_alignment = 1
 expand_icon = true
 item_count = 13
