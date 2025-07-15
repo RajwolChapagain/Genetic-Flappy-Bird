@@ -4,5 +4,5 @@
 
 [node name="PinkBird" type="Sprite2D"]
 position = Vector2(-7, 0)
-scale = Vector2(0.116727, 0.116727)
+scale = Vector2(0.11287, 0.11287)
 texture = ExtResource("1_g0k8m")
