@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c683vblte4eyj" path="res://assets/birds/bee/sprites/skeleton-animation_00.png" id="1_od66u"]
 
 [node name="Bee" type="Sprite2D"]
-position = Vector2(-1, 0)
-scale = Vector2(0.351648, 0.351648)
+position = Vector2(-2, -1)
+scale = Vector2(0.301688, 0.301688)
 texture = ExtResource("1_od66u")
 flip_h = true
