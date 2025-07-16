@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bijinaa7s3yl2"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bijinaa7s3yl2"]
 
+[ext_resource type="Texture2D" uid="uid://d1uuohlbv5ydw" path="res://assets/ui/toggle_on.png" id="1_puq7a"]
 [ext_resource type="FontFile" uid="uid://bxqxm5o04y0fr" path="res://assets/fonts/nunito/static/Nunito-Medium.ttf" id="1_pxeie"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puq7a"]
@@ -33,6 +34,7 @@ shadow_size = 1
 
 [resource]
 Button/styles/focus = SubResource("StyleBoxEmpty_puq7a")
+CheckButton/icons/checked = ExtResource("1_puq7a")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_puq7a")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_nr324")
 Label/fonts/font = ExtResource("1_pxeie")
