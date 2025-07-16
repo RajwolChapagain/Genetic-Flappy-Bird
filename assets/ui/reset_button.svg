@@ -51,10 +51,10 @@
   </defs>
   <g
      id="layer1"
-     transform="translate(-583.45117,-174.0762)"
+     transform="matrix(0.39835494,0,0,0.39835494,-232.42065,-69.344112)"
      inkscape:export-filename="reset_button.png"
-     inkscape:export-xdpi="6.3736792"
-     inkscape:export-ydpi="6.3736792">
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96">
     <ellipse
        style="display:inline;fill:#ff0000;stroke:none;stroke-width:20;stroke-dasharray:none;stroke-opacity:1"
        id="path1"
