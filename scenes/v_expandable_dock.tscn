@@ -1,7 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc2nob4gwua7v"]
+[gd_scene load_steps=6 format=3 uid="uid://dc2nob4gwua7v"]
 
 [ext_resource type="Script" uid="uid://cxphcpomcf15t" path="res://scripts/v_expandable_dock.gd" id="1_muemm"]
 [ext_resource type="Texture2D" uid="uid://rmg4mjg201cy" path="res://assets/ui/scroll_down_button.png" id="2_dx0ke"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ksi42"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2cv3"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dx0ke"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 0.784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
 
 [node name="VExpandableDock" type="Control" groups=["dock"]]
 custom_minimum_size = Vector2(0, 250)
@@ -23,11 +38,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 1
 
-[node name="Button" type="Button" parent="Items"]
+[node name="MarginContainer" type="MarginContainer" parent="Items"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Button" type="Button" parent="Items/MarginContainer"]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-text = "Logs"
+theme_override_styles/hover = SubResource("StyleBoxFlat_ksi42")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x2cv3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dx0ke")
+text = "LOGS"
 
 [node name="Panel" type="Panel" parent="Items"]
 layout_mode = 2
@@ -72,5 +96,5 @@ icon = ExtResource("2_dx0ke")
 flat = true
 expand_icon = true
 
-[connection signal="pressed" from="Items/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Items/MarginContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Items/Panel/MarginContainer/MarginContainer/ScrollToBottomButton" to="." method="_on_scroll_to_bottom_button_pressed"]

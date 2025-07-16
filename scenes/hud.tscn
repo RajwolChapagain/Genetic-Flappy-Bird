@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0hgla60wb1ta"]
+[gd_scene load_steps=4 format=3 uid="uid://c0hgla60wb1ta"]
 
 [ext_resource type="PackedScene" uid="uid://cklf802fmc20c" path="res://scenes/score_label.tscn" id="1_ahhtf"]
 [ext_resource type="Script" uid="uid://cx14nibum1ass" path="res://scripts/hud.gd" id="1_oo0fn"]
+[ext_resource type="FontFile" uid="uid://py2go6xduy8m" path="res://assets/fonts/nunito/static/Nunito-Bold.ttf" id="3_5ysmq"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -28,6 +29,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_5ysmq")
 text = "Gen: 1"
 
 [node name="Scores" type="VBoxContainer" parent="MarginContainer"]
@@ -38,9 +40,11 @@ size_flags_vertical = 0
 [node name="ScoreLabel" parent="MarginContainer/Scores" instance=ExtResource("1_ahhtf")]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5ysmq")
 text = "S: 0"
 
 [node name="HighScoreLabel" parent="MarginContainer/Scores" instance=ExtResource("1_ahhtf")]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5ysmq")
 text = "H: 0"

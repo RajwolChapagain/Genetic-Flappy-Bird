@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://w5sw4x4mu7eq"]
+[gd_scene load_steps=16 format=3 uid="uid://w5sw4x4mu7eq"]
 
 [ext_resource type="Script" uid="uid://phuk4q6qdnb0" path="res://scripts/h_expandable_dock.gd" id="1_8lkuh"]
 [ext_resource type="PackedScene" uid="uid://uldqtmf6j3nr" path="res://scenes/selection_size_option.tscn" id="2_4txsr"]
@@ -12,6 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://dugusrbpsl7ar" path="res://scenes/random_seed_option.tscn" id="10_vmain"]
 [ext_resource type="PackedScene" uid="uid://btg0m3pbb2wg2" path="res://scenes/gene_crossover_method_option.tscn" id="11_465li"]
 [ext_resource type="PackedScene" uid="uid://bkp2jhjt7iv4m" path="res://scenes/play_option.tscn" id="12_rtuxg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8164a"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 0.588235)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pknvb"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtuxg"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 0.784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
 
 [node name="HExpandableDock" type="Control"]
 custom_minimum_size = Vector2(200, 0)
@@ -36,10 +51,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Items"]
+[node name="Control" type="Control" parent="Items"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Controls"
+
+[node name="Button" type="Button" parent="Items/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -58.0
+offset_top = 5.0
+offset_right = 82.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+pivot_offset = Vector2(46, 15)
+size_flags_vertical = 4
+theme_override_styles/hover = SubResource("StyleBoxFlat_8164a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pknvb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rtuxg")
+text = "CONTROLS"
 
 [node name="Panel" type="Panel" parent="Items"]
 layout_mode = 2
@@ -99,4 +133,4 @@ layout_mode = 2
 [node name="PlayOption" parent="Items/Panel/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("12_rtuxg")]
 layout_mode = 2
 
-[connection signal="pressed" from="Items/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Items/Control/Button" to="." method="_on_button_pressed"]
