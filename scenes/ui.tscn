@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://3de41qa61pva"]
+[gd_scene load_steps=14 format=3 uid="uid://3de41qa61pva"]
 
 [ext_resource type="PackedScene" uid="uid://w5sw4x4mu7eq" path="res://scenes/h_expandable_dock.tscn" id="1_nt7q6"]
 [ext_resource type="Theme" uid="uid://bijinaa7s3yl2" path="res://resources/ui.tres" id="1_p7vwb"]
@@ -7,8 +7,31 @@
 [ext_resource type="PackedScene" uid="uid://dc2nob4gwua7v" path="res://scenes/v_expandable_dock.tscn" id="2_x4jx1"]
 [ext_resource type="Texture2D" uid="uid://rvsaliki7xuc" path="res://assets/ui/reset_button.png" id="4_8dubc"]
 [ext_resource type="Texture2D" uid="uid://dawju3c38n2oe" path="res://assets/ui/pause_button.png" id="4_p7vwb"]
+[ext_resource type="Texture2D" uid="uid://ban1g33hf062p" path="res://assets/ui/slider_grabber.png" id="6_ktti3"]
+[ext_resource type="Texture2D" uid="uid://47cy2cb37eha" path="res://assets/ui/slider_grabber_highlight.png" id="7_cgfq5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ktti3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7vwb"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.164706, 0.164706, 0.164706, 0.764706)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgfq5"]
+bg_color = Color(0.933333, 0.517647, 0.203922, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dvkv"]
+bg_color = Color(0.933333, 0.517647, 0.203922, 1)
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
 
 [node name="UI" type="Control"]
 process_mode = 3
@@ -85,6 +108,11 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
+theme_override_icons/grabber = ExtResource("6_ktti3")
+theme_override_icons/grabber_highlight = ExtResource("7_cgfq5")
+theme_override_styles/slider = SubResource("StyleBoxFlat_p7vwb")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_cgfq5")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_7dvkv")
 min_value = 1.0
 max_value = 10.0
 value = 2.0
