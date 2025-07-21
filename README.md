@@ -10,7 +10,7 @@ To make changes to this project, clone this repository and open the project usin
 Since this project was originally created as a learning experience, I wanted to keep the architecture as simple as possible to be able to understand everything that was happening under the hood. To that end, each agent's gene contains a mere three floating point values that dicate its behavior. This first two are the weights connecting two neurons in the input layer to one neuron in the output layer. The two neurons in the input layer represent the normalized horizontal distance from the closest pipe to the agent and the normalized vertical distance from the center of the closest pipe gap. The output layer is converted into a boolean that determines whether the agent should flap or not flap by applying the sigmoid function and checking if the resulting value is greater than 0.5.
 Expressed as a mathematical equation, the agent's decision-making can be summed up as below:
 ```
-flap = sigmoid((h_distance_from_closest_pipe)*gene1 + (v_distance_from_center_of_closest_pipe_gap)*gene2 + gene3) > 0.5
+flap = sigmoid(h_distance_from_closest_pipe*gene1 + v_distance_from_center_of_closest_pipe_gap*gene2 + gene3) > 0.5
 ```
 
 Here is a diagram illustrating the architecture as a layered perceptron:
